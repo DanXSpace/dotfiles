@@ -11,6 +11,6 @@
 # and returns the contents of .codex-report.md verbatim, without adding, dropping or rewording findings.
 # If codex exits non-zero or is not logged in (`codex login status`), report the seat as a dropout and continue.
 # Codex's findings get the same verification as every other seat: rerun each command, keep only what reproduces.
-interrogate reviewers: fable high, opus high, codex-cli
+interrogate reviewers: opus high, codex-cli
 arena runners: fable high, opus high
 arena cross-judge pool: codex-cli
