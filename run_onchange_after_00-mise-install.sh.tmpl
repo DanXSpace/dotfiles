@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Install the tools in ~/.config/mise/config.toml. Reruns when that file changes.
+# mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+set -euo pipefail
+command -v mise >/dev/null || { echo "Install mise first: https://mise.jdx.dev (macOS: brew install mise)" >&2; exit 1; }
+mise install

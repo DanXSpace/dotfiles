@@ -1,0 +1,6 @@
+[tools]
+chezmoi = "latest"
+claude = { version = "latest", minimum_release_age = "0s", lazy = true, auto_update = "4h" }
+codex = { version = "latest", minimum_release_age = "0s", lazy = true, auto_update = "4h" }
+gh = { version = "latest", minimum_release_age = "0s", lazy = true }
+node = { version = "latest", minimum_release_age = "0s", lazy = true }

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Install the pstack skills globally for Claude Code. Reruns when this list changes.
+# To pick up upstream updates without changing the list: npx skills update -g
+set -euo pipefail
+eval "$(mise env -s bash)"
+
+npx -y skills add backnotprop/pstack -g -a claude-code -y -s \
+  interrogate arena in-your-own-words blast-radius how why \
+  create-verification-skill maintain-verification-skill correct unslop \
+  >/dev/null
+echo "  + pstack skills"

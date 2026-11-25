@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# Merge the shared keys below into ~/.claude/settings.json and keep everything else.
+# Not a managed file, because Claude Code rewrites it and machine-specific hooks live there.
+import json
+import sys
+
+SHARED = {
+    "theme": "dark-ansi",
+}
+
+raw = sys.stdin.read()
+settings = json.loads(raw) if raw.strip() else {}
+
+
+def merge(dst, src):
+    for key, value in src.items():
+        if isinstance(value, dict) and isinstance(dst.get(key), dict):
+            merge(dst[key], value)
+        else:
+            dst[key] = value
+
+
+merge(settings, SHARED)
+sys.stdout.write(json.dumps(settings, indent=2) + "\n")

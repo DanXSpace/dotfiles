@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install missing Claude Code plugins. Reruns when this list changes.
+set -euo pipefail
+eval "$(mise env -s bash)"
+
+plugins=(
+  mattpocock-skills@claude-plugins-official
+  clangd-lsp@claude-plugins-official
+)
+
+installed="$(claude plugin list 2>/dev/null || true)"
+for plugin in "${plugins[@]}"; do
+  if grep -q "$plugin" <<<"$installed"; then
+    echo "  = $plugin"
+  else
+    claude plugin install "$plugin" && echo "  + $plugin" || echo "  ! failed: $plugin" >&2
+  fi
+done
