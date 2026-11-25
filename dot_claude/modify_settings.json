@@ -6,6 +6,8 @@ import sys
 
 SHARED = {
     "theme": "dark-ansi",
+    "model": "opus",
+    "effortLevel": "medium",
 }
 
 raw = sys.stdin.read()
