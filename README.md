@@ -7,7 +7,7 @@ Everything my coding-agent workflow needs on a machine, managed with [chezmoi](h
 | Target | Source | Notes |
 |---|---|---|
 | `~/.claude/rules/pstack-models.md` | `dot_claude/rules/` | Reviewer models for `/interrogate` and `/arena`, including the `codex-cli` seat |
-| `~/.claude/settings.json` | `dot_claude/modify_settings.json` | Merges shared keys only; Claude Code and machine-specific hooks keep the rest |
+| `~/.claude/settings.json` | `dot_claude/modify_settings.json` | Merges shared keys only; Claude Code and any machine-specific hooks keep the rest |
 | `~/.config/mise/config.toml` | `dot_config/mise/` | Installs claude, codex, gh, node and chezmoi |
 | `~/.gitconfig` | `dot_gitconfig` | Uses `gh` for GitHub credentials |
 | Claude Code plugins | `run_onchange_after_10-claude-plugins.sh.tmpl` | `mattpocock-skills`, `clangd-lsp` |
