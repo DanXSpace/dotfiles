@@ -1,6 +1,6 @@
 # dotfiles
 
-Everything my coding-agent workflow needs on a machine, managed with [chezmoi](https://chezmoi.io): Claude Code, Matt Pocock's skills, the pstack skills, the Codex reviewer, git and gh.
+Everything my coding-agent workflow needs on a machine, managed with [chezmoi](https://chezmoi.io): Claude Code, Matt Pocock's skills, the pstack skills, the Codex reviewer, git and gh, plus links so Codex and Gemini (Antigravity) share the same instructions and skills.
 
 ## What it sets up
 
@@ -14,6 +14,7 @@ Everything my coding-agent workflow needs on a machine, managed with [chezmoi](h
 | `~/.gitconfig` | `dot_gitconfig` | Uses `gh` for GitHub credentials |
 | Claude Code plugins | `run_onchange_after_10-claude-plugins.sh.tmpl` | `mattpocock-skills`, `clangd-lsp` |
 | pstack skills | `run_onchange_after_20-skills.sh.tmpl` | The 10 cherry-picked skills |
+| Codex and Gemini links | `dot_agents/executable_link-skills.sh`, run by `run_after_30-agent-links.sh` | Links `~/.agents/skills`, `~/.codex/AGENTS.md`, `~/.gemini/config/` and T3's Antigravity folder to the Claude originals, and adds MobileBuildMCP for Antigravity on macOS. Rerun `~/.agents/link-skills.sh` after adding a skill |
 
 Sign-ins are never stored here. After each apply, a check lists any that are missing.
 
