@@ -19,7 +19,8 @@ A change is **risky** if it touches data models or migrations, stored user data 
 
 ## Models and effort
 
-- **Default:** Opus at medium effort. It's set in settings, so subagents on Opus get it unless told otherwise.
-- **High effort:** for risky changes, and for a second attempt after a failed review or fix.
+- **Default:** the session's own model. In Claude Code that's Opus at medium effort, set in settings, so subagents on Opus get it unless told otherwise.
+- **Subagents and delegated tasks use the same provider and model as the session that starts them.** A Gemini session's workers are Gemini, not Claude. Use another model only when I name one, or when a skill's model settings assign seats (such as `pstack-models.md` for `/interrogate` and `/arena`).
+- **High effort:** for risky changes, and for a second attempt after a failed review or fix. Raise effort on the same model (Gemini: `thought_level` high); don't switch providers to get it.
 - **Fable, xhigh, and multi-model runs** (`/interrogate`, `/arena`): only for risky changes or big design choices.
 - **Subagents:** don't spawn one for work that takes a few tool calls. Use Explore for broad searches.
